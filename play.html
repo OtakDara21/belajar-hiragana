@@ -623,7 +623,7 @@
                       "Huruf Apa ini ....";
                   } else {
                     document.querySelector(".ques").innerHTML =
-                      "Kamu Salah";
+                      " Jawaban Kamu Salah";
                   }
                 }
               });
@@ -633,6 +633,7 @@
             const wd = list.split("");
             let index = Math.floor(Math.random() * wd.length);
             huruf[type].innerHTML = wd[index];
+            document.querySelector(".ques").innerHTML = "Huruf Apa ini ....";
             return [wd[index], index];
           }
         }
