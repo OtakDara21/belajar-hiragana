@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HIRAGANA - iamprogrammer</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Fruktur&family=Lobster&family=Oooh+Baby&family=Press+Start+2P&family=Rubik&display=swap");
       * {
         scroll-behavior: smooth;
+        user-select: none;
+        text-decoration: none;
       }
       body {
         background-color: #4ecadb;
-        min-width: 1280px;
       }
       .container {
         margin: 0 auto;
         max-width: 48rem;
         width: 90%;
         overflow: hidden;
-        border: 1px solid black;
       }
       .toop {
         font-family: "Rubik";
@@ -118,6 +119,127 @@
         font-size: 20px;
         font-family: "Oooh+Baby";
       }
+      .container .list {
+      }
+      .list .tener {
+        display: flex;
+        padding: 5px;
+      }
+      .tener .box {
+        border: 1px solid black;
+        border-radius: 20px;
+        box-shadow: 3px 3px 12px;
+        font-size: 34px;
+        width: 150px;
+        height: 160px;
+        display: block;
+        padding: 0;
+        margin: 5px;
+        text-align: center;
+        animation: dp 1s;
+        cursor: pointer;
+      }
+      .box h2 {
+        margin-top: 20px;
+        margin-bottom: -10px;
+        color: rgb(194, 211, 44);
+      }
+      .box span {
+        color: white;
+      }
+      .box:hover {
+        background-color: rgb(236, 65, 65);
+        box-shadow: none;
+      }
+      .container .hafalan {
+        margin-top: 100px;
+        height: 487px;
+        text-align: center;
+      }
+      .hafalan .asking {
+        font-family: "Times New Roman", Times, serif;
+        margin-top: -10px;
+      }
+      .asking span {
+        font-size: large;
+        font-weight: bold;
+      }
+      .asking .qs {
+        margin-top: -5px;
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+      }
+      .qs .batal {
+        background-color: #f84747;
+        color: white;
+        font-size: large;
+        border-radius: 10px;
+      }
+      .qs .lanjut {
+        background-color: #5cf847;
+        color: white;
+        font-size: large;
+        border-radius: 10px;
+      }
+      .teratur .games {
+        background-color: rgb(236, 65, 65);
+        border: 1px solid black;
+        height: 450px;
+        width: 350px;
+        margin: auto;
+        padding: 5px;
+        border-radius: 20px;
+        box-shadow: 3px 7px 17px;
+      }
+      .acak .games {
+        background-color: rgb(236, 65, 65);
+        border: 1px solid black;
+        height: 450px;
+        width: 350px;
+        margin: auto;
+        padding: 5px;
+        border-radius: 20px;
+        box-shadow: 3px 7px 17px;
+      }
+      .tebakan .games {
+        background-color: rgb(236, 65, 65);
+        border: 1px solid black;
+        height: 450px;
+        width: 350px;
+        margin: auto;
+        padding: 5px;
+        border-radius: 20px;
+        box-shadow: 3px 7px 17px;
+      }
+      .games .truck {
+        margin-top: 60px;
+      }
+      .games h2 {
+        color: rgb(194, 211, 44);
+        font-size: 85px;
+      }
+      .games .timing {
+        color: white;
+        font-size: 35px;
+      }
+      .games input {
+        background-color: rgb(236, 65, 65);
+        outline: none;
+        border: none;
+        border-bottom: 1px solid black;
+        margin-top: 55px;
+        color: white;
+        font-size: large;
+        text-align: center;
+      }
+      .games button {
+        font-size: large;
+        border-radius: 10px;
+        background-color: #5cf847;
+        color: rgb(0, 0, 0);
+      }
       @keyframes dp {
         from {
           opacity: 1;
@@ -144,10 +266,20 @@
       }
       @media only screen and (max-width: 600px) {
         .toop {
-          font-size: 34px;
+          font-size: 24px;
         }
         .sponsor .popup {
-          font-size: 78px;
+          font-size: 40px;
+        }
+        .container .main-menu {
+          font-size: 12px;
+        }
+        .about .wm {
+          font-size: 12px;
+        }
+        .tener .box {
+          width: 450px;
+          height: 460px;
         }
       }
     </style>
@@ -157,7 +289,7 @@
       <div class="drop-up-menu">
         <div class="head">
           <h3>Menu</h3>
-          <span style="cursor: pointer">close</span>
+          <span class="close" style="cursor: pointer">close</span>
         </div>
         <div class="menu">
           <div class="value">Hafalan Teratur</div>
@@ -187,25 +319,292 @@
         </div>
         <div class="batasan2">
           <div class="wm">
-            <span>Powered By Very Suhandi</span>
+            <span class="weem"></span>
             <span style="color: white">がんばろう</span>
+          </div>
+        </div>
+      </div>
+      <div class="list"></div>
+      <div class="hafalan">
+        <div class="teratur" style="display: none">
+          <div class="asking">
+            <img src="https://i.ibb.co/gJdh0vC/focus.gif" />
+            <h2>Hafalan Teratur</h2>
+            <span
+              ><p>
+                Hafalan teratur. kamu akan menghafal huruf secara berurutan,
+                mulai dari huruf pertama sampai terakhir, jeda tersedia hanya 7
+                detik setelah itu huruf akan berganti.
+              </p></span
+            >
+            <div class="qs">
+              <button class="batal">Batal</button>
+              <button class="lanjut">Lanjutkan</button>
+            </div>
+          </div>
+          <div class="games" style="display: none">
+            <div class="truck">
+              <h2 class="huruf"></h2>
+              <div class="timing">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="acak" style="display: none">
+          <div class="asking">
+            <img src="https://i.ibb.co/phYy11D/bingung2.gif" />
+            <h2>Hafalan Acak</h2>
+            <span
+              ><p>
+                Hafalan acak. kamu akan menghafal huruf secara acak, waktu yang
+                diberikan setiap hurufnya adalah 8 detik! setelah itu huruf akan
+                berganti.
+              </p></span
+            >
+            <div class="qs">
+              <button class="batal">Batal</button>
+              <button class="lanjut">Lanjutkan</button>
+            </div>
+          </div>
+          <div class="games" style="display: none">
+            <div class="truck">
+              <h2 class="huruf"></h2>
+              <div class="timing">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tebakan" style="display: none">
+          <div class="asking">
+            <img src="https://i.ibb.co/C9G50yw/wrong.gif" />
+            <h2>Tebak Huruf</h2>
+            <span
+              ><p>
+                Tebak Huruf. kamu akan diberi sebuah kartu yang wajib kamu isi
+                dengan benar, diakhir pertanyaan kamu akan diberikan nilai.
+              </p></span
+            >
+            <div class="qs">
+              <button class="batal">Batal</button>
+              <button class="lanjut">Lanjutkan</button>
+            </div>
+          </div>
+          <div class="games" style="display: none">
+            <div class="truck">
+              <h2 class="huruf"></h2>
+              <div class="timing">
+                <span class="ques">Huruf Apa ini ....</span>
+                <input class="txt" type="text" placeholder="..." />
+                <button class="jwb">Jawab</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <!-- <div>
       <p>
-        あ a い i う u え e お o か ka き ki く ku け ke こ ko さ sa し shi す
-        su せ se そ so た ta ち chi つ tsu て te と to な na に ni ぬ nu ね ne
-        の no は ha ひ hi ふ fu へ he ほ ho ま ma み mi む mu め me も mo や ya
-        ゆ yu よ yo ら ra り ri る ru れ re ろ ro わ wa を wo ん n
+        あ.い.う.え.お.か.き.く.け.こ.さ.し.す.せ.そ.た.ち.つ.て.と.な.に.ぬ.ね.の.は.ひ.ふ.へ.ほ.ま.み.む.め.も.や.ゆ.よ.ら.り.る.れ.ろ.わ.を.ん
       </p>
     </div> -->
 
     <!-- <script
       type="text/javascript"
       src="https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.min.js"
-    ></script> -->
-    <script type="text/javascript"></script>
+      ></script> -->
+    <script type="text/javascript">
+      class HiVery {
+        constructor() {
+          this.clickLatihan = document.querySelectorAll(".pil")[0];
+          this.clickList = document.querySelectorAll(".pil")[1];
+          this.clickClose = document.querySelector(".close");
+        }
+        start(list) {
+          document.querySelector(".weem").innerHTML = atob(
+            "UG93ZXJlZCBCeSBWZXJ5IFN1aGFuZGk="
+          );
+          let loopWd = 0;
+          let loop = 0;
+          let word = "";
+          const batal = document.querySelectorAll(".batal");
+          const lanjut = document.querySelectorAll(".lanjut");
+          const mainMenu = document.querySelector(".drop-up-menu");
+          const pilihMenu = document.querySelectorAll(".value");
+          this.clickLatihan.addEventListener("click", function () {
+            let gixer = mainMenu.style.display == "block" ? "none" : "block";
+            mainMenu.style.display = gixer;
+          });
+          this.clickClose.addEventListener("click", function () {
+            mainMenu.style.display = "none";
+          });
+          this.clickList.addEventListener("click", function () {
+            const element = document.querySelector(".list");
+            const gixer = element.innerHTML == "" ? list : "";
+            document.querySelector(".acak").style.display = "none";
+            document.querySelector(".teratur").style.display = "none";
+            document.querySelector(".tebakan").style.display = "none";
+            const a = document.querySelector(".about");
+            if (gixer == "") {
+              a.style.display = "block";
+            } else {
+              a.style.display = "none";
+            }
+            mainMenu.style.display = "none";
+            element.innerHTML = gixer;
+          });
+          for (let i = 0; i < pilihMenu.length; i++) {
+            pilihMenu[i].addEventListener("click", function (e) {
+              const games = document.querySelectorAll(".games");
+              const asking = document.querySelectorAll(".asking");
+              asking[i].style.display = "block";
+              games[i].style.display = "none";
+              const element = document.querySelector(".list");
+              element.style.display = "none";
+              if (pilihMenu[i].innerHTML == "Hafalan Teratur") {
+                const trt = document.querySelector(".teratur");
+                const a = document.querySelector(".about");
+                a.style.display = "none";
+                document.querySelector(".acak").style.display = "none";
+                document.querySelector(".tebakan").style.display = "none";
+                trt.style.display = "block";
+                mainMenu.style.display = "none";
+              } else if (pilihMenu[i].innerHTML == "Hafalan Acak") {
+                //
+                const trt = document.querySelector(".acak");
+                const a = document.querySelector(".about");
+                document.querySelector(".teratur").style.display = "none";
+                document.querySelector(".tebakan").style.display = "none";
+                a.style.display = "none";
+                trt.style.display = "block";
+                mainMenu.style.display = "none";
+              } else {
+                //
+                const trt = document.querySelector(".tebakan");
+                const a = document.querySelector(".about");
+                document.querySelector(".acak").style.display = "none";
+                document.querySelector(".teratur").style.display = "none";
+                a.style.display = "none";
+                trt.style.display = "block";
+                mainMenu.style.display = "none";
+              }
+            });
+          }
+          for (let i = 0; i < batal.length; i++) {
+            batal[i].addEventListener("click", function () {
+              document.querySelector(".acak").style.display = "none";
+              document.querySelector(".teratur").style.display = "none";
+              document.querySelector(".tebakan").style.display = "none";
+              const a = document.querySelector(".about");
+              a.style.display = "block";
+            });
+            lanjut[i].addEventListener("click", function () {
+              const games = document.querySelectorAll(".games");
+              const asking = document.querySelectorAll(".asking");
+              asking[i].style.display = "none";
+              games[i].style.display = "block";
+              gamers(i);
+            });
+          }
+          function gamers(type) {
+            const huruf = document.querySelectorAll(".huruf");
+            const timing = document.querySelectorAll(".timing");
+            const list =
+              "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん";
+            const lisA =
+              "a.i.u.e.o.ka.ki.ku.ke.ko.sa.shi.su.se.so.ta.chi.tsu.te.to.na.ni.nu.ne.no.ha.hi.fu.he.ho.ma.mi.mu.me.mo.ya.yu.yo.ra.ri.ru.re.ro.wa.wo.n";
+            if (type == 0) {
+              const teratur = setInterval(function (event) {
+                if (loop < 44) {
+                  if (loopWd < 7) {
+                    const wd = list.split("");
+                    huruf[type].innerHTML = wd[loop];
+                    word = wd[loop];
+                    loopWd++;
+                    timing[type].innerHTML = "<span>....</span>";
+                  } else {
+                    clearInterval(teratur);
+                    timing[type].innerHTML = lisA.split(".")[loop];
+                    setTimeout(function () {
+                      gamers(type);
+                    }, 2000);
+                    loopWd = 0;
+                    loop++;
+                  }
+                } else {
+                  loop = 0;
+                  loopWd = 0;
+                  const ask = prompt("SELESAI");
+                  if (ask == true) {
+                    window.location.reload();
+                  } else {
+                    window.location.reload();
+                  }
+                }
+              }, 1000);
+            } else if (type == 1) {
+              const wd = list.split("");
+              let index = Math.floor(Math.random() * wd.length);
+              const acak = setInterval(function (event) {
+                if (loop < 44) {
+                  if (loopWd < 7) {
+                    huruf[type].innerHTML = wd[index];
+                    word = wd[loop];
+                    loopWd++;
+                    timing[type].innerHTML = "<span>....</span>";
+                  } else {
+                    clearInterval(acak);
+                    timing[type].innerHTML = lisA.split(".")[index];
+                    setTimeout(function () {
+                      gamers(type);
+                    }, 2000);
+                    loopWd = 0;
+                    index = Math.floor(Math.random() * wd.length);
+                  }
+                } else {
+                  loop = 0;
+                  loopWd = 0;
+                  const ask = prompt("SELESAI");
+                  if (ask == true) {
+                    window.location.reload();
+                  } else {
+                    window.location.reload();
+                  }
+                }
+              }, 1000);
+            } else {
+              const clickBtn = document.querySelector(".jwb");
+              const txtJwb = document.querySelector(".txt");
+              let sts = replace(huruf, type, list);
+              clickBtn.addEventListener("click", function () {
+                if (txtJwb.value == "") {
+                  alert("Masukan jawaban anda terlebih dahulu.");
+                } else {
+                  if (txtJwb.value.toLowerCase() == lisA.split(".")[sts[1]]) {
+                    sts = replace(huruf, type, list);
+                    document.querySelector(".ques").innerHTML =
+                      "Huruf Apa ini ....";
+                  } else {
+                    document.querySelector(".ques").innerHTML =
+                      " Jawaban Kamu Salah";
+                  }
+                }
+              });
+            }
+          }
+          function replace(huruf, type, list) {
+            const wd = list.split("");
+            let index = Math.floor(Math.random() * wd.length);
+            huruf[type].innerHTML = wd[index];
+            return [wd[index], index];
+          }
+        }
+      }
+      const servero = new HiVery();
+      servero.start(
+        '<div class="tener"><div class="box"><h2>あ</h2><span>a</span></div><div class="box"><h2>い</h2><span>i</span></div><div class="box"><h2>う</h2><span>u</span></div><div class="box"><h2>え</h2><span>e</span></div><div class="box"><h2>お</h2><span>o</span></div></div><div class="tener"><div class="box"><h2>か</h2><span>ka</span></div><div class="box"><h2>き</h2><span>ki</span></div><div class="box"><h2>く</h2><span>ku</span></div><div class="box"><h2>け</h2><span>ke</span></div><div class="box"><h2>こ</h2><span>ko</span></div></div><div class="tener"><div class="box"><h2>さ</h2><span>sa</span></div><div class="box"><h2>し</h2><span>shi</span></div><div class="box"><h2>す</h2><span>su</span></div><div class="box"><h2>せ</h2><span>se</span></div><div class="box"><h2>そ</h2><span>so</span></div></div><div class="tener"><div class="box"><h2>た</h2><span>ta</span></div><div class="box"><h2>ち</h2><span>chi</span></div><div class="box"><h2>つ</h2><span>tsu</span></div><div class="box"><h2>て</h2><span>te</span></div><div class="box"><h2>と</h2><span>to</span></div></div><div class="tener"><div class="box"><h2>な</h2><span>na</span></div><div class="box"><h2>に</h2><span>ni</span></div><div class="box"><h2>ぬ</h2><span>nu</span></div><div class="box"><h2>ね</h2><span>ne</span></div><div class="box"><h2>の</h2><span>no</span></div></div><div class="tener"><div class="box"><h2>は</h2><span>ha</span></div><div class="box"><h2>ひ</h2><span>hi</span></div><div class="box"><h2>ふ</h2><span>fu</span></div><div class="box"><h2>へ</h2><span>he</span></div><div class="box"><h2>ほ</h2><span>ho</span></div></div><div class="tener"><div class="box"><h2>ま</h2><span>ma</span></div><div class="box"><h2>み</h2><span>mi</span></div><div class="box"><h2>む</h2><span>mu</span></div><div class="box"><h2>め</h2><span>me</span></div><div class="box"><h2>も</h2><span>mo</span></div></div><div class="tener"><div class="box"><h2>や</h2><span>ya</span></div><div class="box"><h2>ゆ</h2><span>yu</span></div><div class="box"><h2>よ</h2><span>yo</span></div><div class="box"><h2>ら</h2><span>ra</span></div><div class="box"><h2>り</h2><span>ri</span></div></div><div class="tener"><div class="box"><h2>る</h2><span>ru</span></div><div class="box"><h2>れ</h2><span>re</span></div><div class="box"><h2>ろ</h2><span>ro</span></div><div class="box"><h2>わ</h2><span>wa</span></div><div class="box"><h2>を</h2><span>wo</span></div></div><div class="tener"><div class="box"><h2>ん</h2><span>n</span></div><div class="box" style="border: 0; box-shadow: none"><h2></h2><span></span></div><div class="box" style="border: 0; box-shadow: none"><h2></h2><span></span></div><div class="box" style="border: 0; box-shadow: none"><h2></h2><span></span></div><div class="box" style="border: 0; box-shadow: none"><h2></h2><span></span></div></div>'
+      );
+    </script>
   </body>
 </html>
